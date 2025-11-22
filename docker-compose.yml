@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  nextjs-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Prevents overwriting node_modules inside the container
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Enables polling for file changes
+      - NEXT_DEV=1  # Ensures Next.js runs in development mode

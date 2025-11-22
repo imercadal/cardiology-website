@@ -8,8 +8,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#e2e9f3',
+        secondary: {
+          100: '#17147F',
+          200: '#06044A'
+        },
+        dark: '#6C91C2',
+        darker: '#2D4C87',
+        darkest: '#00246B',
+        rojoReserva: "#e22340"
+      },
+      fontFamily: {
+        azeret: ["var(--font-azeret-mono)"],
+        inter: ["var(--font-inter)"],
+        cardo: ["Cardo, serif"],
       },
     },
   },
