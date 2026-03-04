@@ -1,18 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-
-const transition = {
-  duration: 0.8,
-  ease: [0, 0.71, 0.2, 1.01],
-};
 
 export default function RectangleCard({
   href,
   children,
   className = "",
   isExternal = false,
+  delay = 0,
 }) {
   const isAnchor = href.startsWith("http");
 
@@ -24,11 +19,9 @@ export default function RectangleCard({
   );
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={transition}
-      className={className}
+    <div
+      className={`${className} animate-card`}
+      style={{ animationDelay: `${delay}s` }}
     >
       {isExternal ? (
         <a href={href} target="_blank" rel="noopener noreferrer">
@@ -37,6 +30,6 @@ export default function RectangleCard({
       ) : (
         <Link href={href}>{content}</Link>
       )}
-    </motion.div>
+    </div>
   );
 }

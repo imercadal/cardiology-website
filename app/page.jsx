@@ -5,12 +5,14 @@ import { CopyLinkButton } from "./components/CopyLinkButton";
 export default function Home() {
   return (
     <main className="bg-primary overflow-x-hidden">
+      <div className="fixed top-0 left-3/4 -translate-x-1/3 h-screen w-[15px] sm:border-2 border-blue-300 pointer-events-none z-0"></div>
       <section id="hero" className="flex flex-col sm:flex-row px-6 min-h-screen mx-auto max-w-6xl items-center">
         <div className="mx-auto md:w-1/2 justify-end grid gap-4 py-6 md:p-8 lg:p-12 md:mr-6 xl:mr-24 mt-6 md:mt-12 lg:mt-16">
 
           <div className="pt-8 md:pt-0 mb-0 sm:mb-8">
             <h1>Dr. Enrique Mercadal Calaf</h1>
             <h3 className="text-darker text-base">Cardiólogo clínico</h3>
+            <hr className="absolute hidden sm:block left-1/2 w-screen -translate-x-1/2 border-t border-blue-300 mt-4"/>
           </div>
 
           <div className="md:hidden flex items-center justify-center my-4 sm:my-6">
@@ -26,7 +28,8 @@ export default function Home() {
           <RectangleCard
             href="https://api.icardiologia.ziz.cl/widget/agenda/reserva"
             isExternal
-            className="rectangulo w-full bg-dark transition-all duration-500 ease-in-out hover:bg-rojoReserva"
+            delay={0}
+            className="rectangulo w-full bg-dark transition-all duration-700 ease-in-out hover:bg-rojoReserva"
           >
             <h5>
               RESERVA TU HORA <br /> en línea
@@ -36,14 +39,16 @@ export default function Home() {
           <RectangleCard
             href="https://icardiologia.cl/"
             isExternal
-            className="rectangulo bg-darker w-full sm:w-[80%] transition-all duration-500 ease-in-out hover:opacity-50"
+            delay={0.1}
+            className="rectangulo bg-darker w-full sm:w-[80%] transition-all duration-700 ease-in-out hover:opacity-50"
           >
             <h5>Ir a la consulta</h5>
           </RectangleCard>
 
           <RectangleCard
             href="#informacion"
-            className="rectangulo bg-darkest w-full sm:w-[60%] transition-all duration-500 ease-in-out"
+            delay={0.2}
+            className="rectangulo bg-darkest w-full sm:w-[60%] transition-all duration-800 ease-in-out"
           >
             <h5>Más información</h5>
           </RectangleCard>
@@ -80,7 +85,9 @@ export default function Home() {
 
       <section id="informacion" className="px-6 md:px-10 max-w-5xl mx-auto">
         <div className="w-full mb-8 md:mb-16">
-          <h1>📍 Ubicación de la consulta</h1>
+          <h1>
+            <mapPin size={24} color="red" className="inline mr-2" /> Ubicación de la consulta
+          </h1>
           <p className="pt-6 text-center font-bold">
             Instituto de Cardiología de Talca
           </p>
