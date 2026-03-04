@@ -10,8 +10,8 @@ export default function Home() {
         <div className="mx-auto md:w-1/2 justify-end grid gap-4 py-6 md:p-8 lg:p-12 md:mr-6 xl:mr-24 mt-6 md:mt-12 lg:mt-16">
 
           <div className="pt-8 md:pt-0 mb-0 sm:mb-8">
-            <h1>Dr. Enrique Mercadal Calaf</h1>
-            <h3 className="text-darker text-base">Cardiólogo clínico</h3>
+            <h1 className="md:whitespace-nowrap">Dr. Enrique Mercadal Calaf</h1>
+            <h3 className="text-darker text-base lg:text-xl">Cardiólogo clínico</h3>
             <hr className="absolute hidden sm:block left-1/2 w-screen -translate-x-1/2 border-t border-blue-300 mt-4"/>
           </div>
 
@@ -83,7 +83,10 @@ export default function Home() {
         />
       </div>
 
-      <section id="informacion" className="px-6 md:px-10 max-w-5xl mx-auto">
+      <section id="informacion" 
+        className="section"
+      
+      >
         <div className="w-full mb-8 md:mb-16">
           <h1>
             <mapPin size={24} color="red" className="inline mr-2" /> Ubicación de la consulta
@@ -112,20 +115,23 @@ export default function Home() {
             <CopyLinkButton />
           </div>
         </div>
-
-        <div id="horario" className="w-full mt-10">
-          <h1>🕒 Horario de atención</h1>
+      </section>
+        <section id="horario" 
+          className="section"
+        >
+          <h1>Horario de atención</h1>
           <p className="py-4 text-center">
             Lunes, Martes y Jueves <br /> 10 a 13 hrs
           </p>
-        </div>
-      </section>
+        </section>
 
       <section
         id="antecedentes"
-        className="px-6 md:px-10 mx-auto mt-8 md:mt-16 max-w-5xl min-h-80"
+        className="section"
       >
-        <h1 className="mb-4">📘 Antecedentes</h1>
+        {/**rounded-xl border border-[rgba(255,255,255,0.08)] bg-[rgba(60,103,182,0.1)] backdrop-blur-sm p-8 md:p-12 */}
+        <h1 className="mb-4">Antecedentes</h1>
+       
         <div className="px-6 md:px-20 py-4">
           <div className="pb-4">
             <h2>Áreas de interés</h2>
