@@ -8,9 +8,8 @@ export default function RectangleCard({
   className = "",
   isExternal = false,
   delay = 0,
+  ariaLabel,
 }) {
-  const isAnchor = href.startsWith("http");
-
   const content = (
     <>
       <span className="absolute inset-0"></span>
@@ -24,11 +23,11 @@ export default function RectangleCard({
       style={{ animationDelay: `${delay}s` }}
     >
       {isExternal ? (
-        <a href={href} target="_blank" rel="noopener noreferrer">
+        <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel}>
           {content}
         </a>
       ) : (
-        <Link href={href}>{content}</Link>
+        <Link href={href} aria-label={ariaLabel}>{content}</Link>
       )}
     </div>
   );

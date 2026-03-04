@@ -15,7 +15,7 @@ export function CopyLinkButton() {
       setTimeout(() => setCopiado(false), 2000);
     } catch (error) {
         console.error("No se pudo copiar el enlace", error);
-        alert("❌ No se pudo copiar el enlace. Inténtalo nuevamente.");
+        alert("No se pudo copiar el enlace. Inténtalo nuevamente.");
     }
   };
 
@@ -23,8 +23,11 @@ export function CopyLinkButton() {
     <button
       type="button"
       onClick={handleCopy}
+      aria-label={copiado ? "Dirección copiada al portapapeles" : "Copiar dirección de la consulta"}
     >
-        <span>{copiado ? "Enlace copiado ✅" : "Copiar dirección"}</span>
+      <span aria-live="polite" aria-atomic="true">
+        {copiado ? "Enlace copiado ✅" : "Copiar dirección"}
+      </span>
     </button>
   );
 }
