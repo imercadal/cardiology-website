@@ -5,7 +5,7 @@ import { CopyLinkButton } from "./components/CopyLinkButton";
 export default function Home() {
   return (
     <main className="bg-primary overflow-x-hidden">
-      <section className="flex flex-col sm:flex-row px-6 sm:min-h-screen mx-auto max-w-6xl items-center">
+      <section id="hero" className="flex flex-col sm:flex-row px-6 min-h-screen mx-auto max-w-6xl items-center">
         <div className="mx-auto md:w-1/2 justify-end grid gap-4 py-6 md:p-8 lg:p-12 md:mr-6 xl:mr-24 mt-6 md:mt-12 lg:mt-16">
 
           <div className="pt-8 md:pt-0 mb-0 sm:mb-8">
@@ -49,9 +49,9 @@ export default function Home() {
           </RectangleCard>
         </div>
 
-        <div className="hidden md:block flex sm:w-1/2 sm:p-6 justify-end lg:p-16 sm:-translate-y-24">
+        <div className="hidden md:flex md:w-1/2 md:p-6 justify-end lg:p-16 md:-translate-y-24">
           <div
-            className="w-96 h-80 rounded-2xl shadow-2xl bg-no-repeat bg-center"
+            className="w-full max-w-sm h-80 rounded-2xl shadow-2xl bg-no-repeat bg-center"
             style={{
               backgroundImage: `url('/Instituto-cardiologia.jpg')`,
               backgroundSize: "auto 100%",
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="md:hidden w-full p-6 flex items-center justify-center sm:my-6">
+      <div className="md:hidden px-6 py-6 sm:my-2">
         <Image
           src="/Instituto-cardiologia.jpg"
           alt="Exterior Instituto de Cardiología de Talca"
