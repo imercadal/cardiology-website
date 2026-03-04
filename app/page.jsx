@@ -157,6 +157,7 @@ export default function Home() {
             <p>Sociedad Médica del Centro.</p>
             <p>Sociedad Médica de Santiago.</p>
             <p>Sociedad Chilena de Cardiología y Cirugía Cardiovascular.</p>
+            <p>Sociedad Europea de Cardiología</p>
           </div>
 
           <div className="pb-4">
