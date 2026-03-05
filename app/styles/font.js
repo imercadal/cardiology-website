@@ -9,9 +9,9 @@ const inter = Inter({
     variable: "--font-inter",
     subsets: ["latin"]
 });
-    
 
-const cardoRegular = Cardo({ weight: '400', subsets: ['latin'] })
-const cardoBold = Cardo({ weight: '700', subsets: ['latin']  })
+const cardo = Cardo({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-cardo' })
+
+
  
-export { azeretMono, inter, cardoRegular, cardoBold }
+export { azeretMono, inter, cardo }

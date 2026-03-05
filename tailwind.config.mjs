@@ -21,7 +21,7 @@ export default {
       fontFamily: {
         azeret: ["var(--font-azeret-mono)"],
         inter: ["var(--font-inter)"],
-        cardo: ["Cardo, serif"],
+        cardo: ["var(--font-cardo)", "serif"],
       },
     },
   },

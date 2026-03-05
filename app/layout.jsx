@@ -1,4 +1,5 @@
 import { Crimson_Pro, Public_Sans } from "next/font/google";
+import { azeretMono, inter, cardo } from "./styles/font";
 import "./globals.css";
 
 const crimsonPro = Crimson_Pro({
@@ -10,7 +11,7 @@ const publicsans = Public_Sans({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://drmercadal.cl';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://doctormercadal.com';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -72,12 +73,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es-CL">
       <body
-        className={`${crimsonPro.variable} ${publicsans.variable} antialiased`}
+        className={`${crimsonPro.variable} ${publicsans.variable} ${azeretMono.variable} ${inter.variable} ${cardo.variable} antialiased`}
       >
         {children}
       </body>
     </html>
   );
 }
+
+
