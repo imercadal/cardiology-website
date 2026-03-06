@@ -1,8 +1,6 @@
 import Image from "next/image";
 import RectangleCard from "./components/RectangleCard";
 import { CopyLinkButton } from "./components/CopyLinkButton";
-import ScrollLines from "./components/ScrollLines";
-import { FadeOut } from "./components/FadeOut";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://drmercadal.cl';
 
@@ -69,15 +67,14 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ScrollLines />
-      <FadeOut>
-        <section id="hero" className="flex flex-col sm:flex-row px-6 min-h-screen mx-auto max-w-6xl items-center">
+      <div className="fixed top-0 left-3/4 -translate-x-1/3 h-screen w-[15px] sm:border-2 border-blue-300 pointer-events-none z-0"></div>
+      <section id="hero" className="flex flex-col sm:flex-row px-6 min-h-screen mx-auto max-w-6xl items-center">
         <div className="mx-auto md:w-1/2 justify-end grid gap-4 py-6 md:p-8 lg:p-12 md:mr-6 xl:mr-24 mt-6 md:mt-12 lg:mt-16">
 
           <div className="pt-8 md:pt-0 mb-0 sm:mb-8">
             <h1 className="md:whitespace-nowrap">Dr. Enrique Mercadal Calaf</h1>
             <h2 className="text-darker text-base lg:text-xl font-normal">Cardiólogo</h2>
-
+            <hr className="absolute hidden sm:block left-1/2 w-screen -translate-x-1/2 border-t border-blue-300 mt-4"/>
           </div>
 
           <div className="md:hidden flex items-center justify-center my-4 sm:my-6">
@@ -138,8 +135,7 @@ export default function Home() {
             />
           </div>
         </div>
-        </section>
-      </FadeOut>
+      </section>
 
       <div className="md:hidden px-6 py-6 sm:my-2">
         <Image
@@ -151,8 +147,7 @@ export default function Home() {
         />
       </div>
 
-      <FadeOut>
-      <section id="consulta" className="section mb-8 md:mb-12">
+      <section id="consulta" className="section w-full mb-8 md:mb-12">
           <h1>Consulta</h1>
           <div id="informacion consulta" className="flex flex-col md:flex-row items-center md:items-start justify-around gap-6 md:gap-0 mt-6 md:mt-0">
             <div id="direccion" className="flex-1 flex flex-col items-center">
@@ -189,9 +184,8 @@ export default function Home() {
             <div id="horario" className="flex-1 flex flex-col items-center gap-1">
               <p className="pt-6 text-lg font-bold">Horario de atención</p>
               <p className="text-center">
-                Lunes, Martes y Jueves
+                Lunes, Martes y Jueves <br /> 10 a 13 hrs
               </p>
-              <p className="tracking-wider">10 a 13 hrs</p>
             </div>
             <div id="telefonos" className="flex-1 flex flex-col items-center gap-1">
               <p className="pt-6 text-lg font-bold">Teléfonos</p>
@@ -199,14 +193,14 @@ export default function Home() {
                 <a
                   href="tel:+56712255203"
                   aria-label="Llamar al 71 2 255203"
-                  className="px-3 rounded-xl flex items-center text-sm tracking-wider hover:bg-opacity-75 hover:text-red-500 transition-colors duration-300"
+                  className="px-3 rounded-xl flex items-center text-sm  tracking-wider hover:bg-opacity-75 transition-colors duration-300"
                 >
                   71 2 255203
                 </a>
                 <a
                   href="tel:+56712255214"
                   aria-label="Llamar al 71 2 255214"
-                  className="px-3 rounded-xl flex items-center text-sm tracking-wider hover:text-red-500 hover:bg-opacity-75 transition-colors duration-300"
+                  className="px-3 rounded-xl flex items-center text-sm tracking-wider hover:bg-opacity-75 transition-colors duration-300"
                 >
                   71 2 255214
                 </a>
@@ -215,7 +209,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Contactar por WhatsApp (abre en nueva ventana)"
-                  className="px-3 m-1 rounded-xl flex items-center gap-2 text-sm tracking-wider transition-colors duration-300 hover:text-red-500"
+                  className="px-3 m-1 rounded-xl flex items-center gap-2 text-sm tracking-wider transition-colors duration-300"
                 >
                   WhatsApp
                   <span className="bg-dark text-gray-100 rounded-full p-1.5 flex items-center justify-center">
@@ -228,11 +222,10 @@ export default function Home() {
             </div>
           </div>
       </section>
-      </FadeOut>
 
       <section
         id="antecedentes"
-        className="section mb-10"
+        className="section"
       >
         {/**rounded-xl border border-[rgba(255,255,255,0.08)] bg-[rgba(60,103,182,0.1)] backdrop-blur-sm p-8 md:p-12 */}
         <h1 className="mb-4">Antecedentes</h1>
@@ -241,15 +234,16 @@ export default function Home() {
           <div className="pb-4">
             <h3>Áreas de interés</h3>
             <p>
-              Cardiología Clínica - Ecocardiografía - Insuficiencia Cardíaca - Fibrilación Auricular
+              Cardiología Clínica, Ecocardiografía, Insuficiencia cardíaca,
+              Fibrilación Auricular
             </p>
           </div>
 
           <div className="pb-4">
             <h3>Estudios</h3>
-            <p>Médico Cirujano, Universidad de Chile.</p>
-            <p>Especialidad de Medicina Interna, Universidad de Chile.</p>
-            <p>Especialidad de Cardiología, Pontificia Universidad Católica de Chile.</p>
+            <p>Médico Cirujano Universidad de Chile.</p>
+            <p>Especialidad de Medicina Interna Universidad de Chile.</p>
+            <p>Especialidad de Cardiología Pontificia Universidad Católica de Chile.</p>
             <p>
               Máster en Ecocardiografía Clínica Avanzada, Universidad Francisco
               de Vitoria, Madrid, España.
@@ -261,7 +255,7 @@ export default function Home() {
             <p>Sociedad Médica del Centro.</p>
             <p>Sociedad Médica de Santiago.</p>
             <p>Sociedad Chilena de Cardiología y Cirugía Cardiovascular.</p>
-            <p>Sociedad Europea de Cardiología.</p>
+            <p>Sociedad Europea de Cardiología</p>
           </div>
 
           <div className="pb-4">
