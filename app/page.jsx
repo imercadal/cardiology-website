@@ -88,34 +88,33 @@ export default function Home() {
           </div>
 
           <RectangleCard
-            href="https://api.icardiologia.ziz.cl/widget/agenda/reserva"
-            isExternal
+            href="#informacion"
             delay={0}
-            className="rectangulo w-full bg-dark transition-all duration-700 ease-in-out hover:bg-rojoReserva"
+            className="rectangulo w-full bg-dark transition-all duration-700 ease-in-out"
             ariaLabel="Reservar hora en línea (abre en nueva ventana)"
           >
             <h5>
-              RESERVA TU HORA <br /> en línea
+              Consulta
             </h5>
           </RectangleCard>
 
           <RectangleCard
-            href="https://icardiologia.cl/"
+            href="https://api.icardiologia.ziz.cl/widget/agenda/reserva"
             isExternal
             delay={0.1}
-            className="rectangulo bg-darker w-full sm:w-[80%] transition-all duration-700 ease-in-out hover:opacity-50"
+            className="rectangulo bg-darker w-full sm:w-[80%] transition-all duration-700 ease-in-out hover:bg-rojoReserva"
             ariaLabel="Ir al sitio de la consulta (abre en nueva ventana)"
           >
-            <h5>Ir a la consulta</h5>
+            <h5>RESERVA TU HORA <br /> en línea</h5>
           </RectangleCard>
 
           <RectangleCard
-            href="#informacion"
+            href="#antecedentes"
             delay={0.2}
             className="rectangulo bg-darkest w-full sm:w-[60%] transition-all duration-800 ease-in-out"
-            ariaLabel="Ir a la sección de información"
+            ariaLabel="Ir a la sección de antecedentes profesionales"
           >
-            <h5>Más información</h5>
+            <h5>Antecedentes profesionales</h5>
           </RectangleCard>
         </div>
 
@@ -153,9 +152,18 @@ export default function Home() {
       
       >
         <div className="w-full mb-8 md:mb-16">
-          <h1>Ubicación de la consulta</h1>
-          <p className="pt-6 text-center font-bold">
-            Instituto de Cardiología de Talca
+          <h1>Dirección de la consulta</h1>
+          <p className="pt-6 text-lg text-center font-bold">
+            <a
+              href="https://icardiologia.cl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+              aria-label="Visitar sitio web del Instituto de Cardiología de Talca (abre en nueva ventana)"
+            >
+
+              Instituto de Cardiología de Talca
+            </a>
           </p>
           <p className="pb-6 text-center">
             Calle 30 Oriente #1420, Talca
