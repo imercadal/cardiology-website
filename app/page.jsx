@@ -1,6 +1,7 @@
 import Image from "next/image";
 import RectangleCard from "./components/RectangleCard";
 import { CopyLinkButton } from "./components/CopyLinkButton";
+import BookingButton from "./components/BookingButton";
 import ScrollLines from "./components/ScrollLines";
 import { FadeOut } from "./components/FadeOut";
 
@@ -93,28 +94,20 @@ export default function Home() {
           <RectangleCard
             href="#consulta"
             delay={0}
-            className="rectangulo w-full bg-dark transition-all duration-700 ease-in-out"
-            ariaLabel="Reservar hora en línea (abre en nueva ventana)"
+            className="rectangulo w-full bg-dark hover:bg-dark/50 transition-all duration-700 ease-in-out"
+            ariaLabel="Ver información de la consulta"
           >
             <h5>
               Consulta
             </h5>
           </RectangleCard>
 
-          <RectangleCard
-            href="https://api.icardiologia.ziz.cl/widget/agenda/reserva"
-            isExternal
-            delay={0.1}
-            className="rectangulo bg-darker w-full sm:w-[80%] transition-all duration-700 ease-in-out hover:bg-rojoReserva"
-            ariaLabel="Ir al sitio de la consulta (abre en nueva ventana)"
-          >
-            <h5>RESERVA TU HORA <br /> en línea</h5>
-          </RectangleCard>
+          <BookingButton />
 
           <RectangleCard
             href="#antecedentes"
             delay={0.2}
-            className="rectangulo bg-darkest w-full sm:w-[60%] transition-all duration-800 ease-in-out"
+            className="rectangulo bg-darkest hover:bg-darkest/50 w-full sm:w-[60%] transition-all duration-800 ease-in-out"
             ariaLabel="Ir a la sección de antecedentes profesionales"
           >
             <h5>Antecedentes profesionales</h5>
@@ -235,7 +228,7 @@ export default function Home() {
         className="section mb-10"
       >
         {/**rounded-xl border border-[rgba(255,255,255,0.08)] bg-[rgba(60,103,182,0.1)] backdrop-blur-sm p-8 md:p-12 */}
-        <h1 className="mb-4">Antecedentes</h1>
+        <h1 className="mb-4">Antecedentes profesionales</h1>
        
         <div className="px-6 md:px-20 py-4">
           <div className="pb-4">
